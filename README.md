@@ -9,12 +9,12 @@ what the test is expecting.
 ## Instructions
 
 * Clone the project from
-  ***link goes here***
+  https://github.com/appacademy-starters/data-structures-graph-intro-starter
 * `cd` into the project folder
 * `npm install` to install dependencies in the project root directory
 * `npm test` to run the specs
 * You can view the test cases in `test/graph-spec.js`. Your job is to write code in
-  * **problems/graph.js** to implement the `Graph` class.
+  **problems/graph.js** to implement the `Graph` class.
 
 
 
