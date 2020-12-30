@@ -60,7 +60,14 @@ class Graph {
   }
 
   depthFirstTraversalRecursive(startingVertex, visited = new Set(), vertices = []) {
-    // Code goes here ...
+    if(visited.has(startingVertex)) return 
+
+    visited.add(startingVertex)
+    vertices.push(startingVertex)
+    this.adjList[startingVertex].forEach(neighbor => {
+      this.depthFirstTraversalRecursive(neighbor, visited, vertices)})
+
+    return vertices
   }
 
 }
