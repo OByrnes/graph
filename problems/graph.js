@@ -45,7 +45,18 @@ class Graph {
   }
 
   depthFirstTraversalIterative(startingVertex) {
-    // Code goes here ...
+    let visited = new Set();
+    let stack = [startingVertex];
+    let results = []
+    while(stack.length){
+      let current = stack.pop();
+      if(!visited.has(current)){
+        visited.add(current)
+        results.push(current)
+        stack.push(...this.adjList[current])
+      }
+    }
+    return results
   }
 
   depthFirstTraversalRecursive(startingVertex, visited = new Set(), vertices = []) {
