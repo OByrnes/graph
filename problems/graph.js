@@ -1,19 +1,27 @@
 
 class Graph {
   constructor() {
-    // Code goes here ...
+    this.adjList = {};
   }
 
   addVertex(vertex) {
-    // Code goes here ...
+    if(!(vertex in this.adjList)){
+      this.adjList[vertex]= [];
+    }
   }
 
   addEdges(srcValue, destValue) {
-    // Code goes here ...
+    if(!this.adjList[srcValue]) this.addVertex(srcValue)
+    if(!this.adjList[destValue]) this.addVertex(destValue)
+    let srcVertices = this.adjList[srcValue]
+    let destVertices= this.adjList[destValue]
+    srcVertices.push(destValue)
+    destVertices.push(srcValue)
+
   }
 
   buildGraph(edges) {
-    // Code goes here ...
+    
   }
 
   breadthFirstTraversal(startingVertex) {
