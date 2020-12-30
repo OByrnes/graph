@@ -21,11 +21,27 @@ class Graph {
   }
 
   buildGraph(edges) {
-    
+    edges.forEach(edge => this.addEdges(...edge))
+    return this.adjList
   }
 
   breadthFirstTraversal(startingVertex) {
-    // Code goes here ...
+    let visited = new Set()
+    let results = []
+    let queue = [startingVertex]
+
+    while(queue.length){
+      let current = queue.shift()
+
+      if (!visited.has(current)){
+        visited.add(current)
+        results.push(current)
+        queue.push(...this.adjList[current])
+      } 
+    }
+    return results
+
+
   }
 
   depthFirstTraversalIterative(startingVertex) {

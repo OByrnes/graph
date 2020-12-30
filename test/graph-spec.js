@@ -82,6 +82,7 @@ describe('Graph Implementation', () => {
 
                 let graph = new Graph();
 
+            
                 const graph1 = {
                     a: ['b', 'c', 'd'],
                     b: ['a', 'c', 'e'],
@@ -90,6 +91,7 @@ describe('Graph Implementation', () => {
                     g: ['d', 'c', 'f'],
                     e: ['b'],
                     f: ['c', 'g']
+                    
                 }
                 
                 expect(graph.buildGraph(edges)).to.eql(graph1);
